@@ -12,7 +12,8 @@ import Home from './Pages/Home.vue';
 // Define the Vuetify instance
 const vuetify = createVuetify({
     components,
-    directives
+    directives,
+    Home
 });
 
 // Create the Vue app instance
