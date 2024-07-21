@@ -12,3 +12,9 @@ Route::namespace('Api')->group(function () {
   Route::put('/delete/{id}', [ArticleController::class, 'destroy']);
 });
 
+// routes/api.php
+
+Route::prefix('api')->middleware('api')->group(function () {
+  Route::get('articles', [ArticleController::class, 'index']);
+  // Other routes
+});
