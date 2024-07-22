@@ -9,7 +9,7 @@
   
             <v-btn color="primary" type="submit">Login</v-btn>
   
-            <p> Don't Have an Account? <router-link to="/signup">Create an Account</router-link> </p>
+            <p> Don't Have an Account? <router-link to="/register">Create an Account</router-link> </p>
   
   
           </v-form>

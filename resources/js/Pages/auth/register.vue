@@ -45,7 +45,7 @@
     methods: {
       signUp() {
         this.errors = [];  // Clear previous errors
-        axios.post('http://127.0.0.1:8000/signup', {
+        axios.post('http://127.0.0.1:8000/register', {
           name: this.name,
           email: this.email,
           password: this.password,

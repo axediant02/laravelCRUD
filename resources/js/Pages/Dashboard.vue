@@ -54,6 +54,7 @@
 import axios from 'axios'; // Import axios
 
 export default {
+    name: 'Dashboard',
     data() {
         return {
             posts: [],

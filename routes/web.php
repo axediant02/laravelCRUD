@@ -35,7 +35,7 @@ Route::get('/form', function () {
 })->where('vue_capture', '[\/\w\.-]*');
 
 Route::post('/login', [loginController::class, 'Login']);
-Route::post('/signup', [RegisterController::class, 'Register']);
+Route::post('/register', [RegisterController::class, 'Register']);
 
 Route::get('/api/users', [UserController::class, 'getUsers']);
 

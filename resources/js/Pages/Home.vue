@@ -286,7 +286,6 @@
                         </template>
 
                         <script>
-                        import Nav from 'resources/js/Components/Nav.vue'
                             export default {
                                 name: 'Home',
                                 data() {

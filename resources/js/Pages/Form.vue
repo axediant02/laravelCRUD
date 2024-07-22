@@ -56,7 +56,7 @@
           console.log(response.data);
           alert("Successfully Submitted");
           this.$refs.form.reset();
-          his.$router.push('/dashboard');
+          // his.$router.push('/articles');
         })
         .catch(error => {
           console.error(error);
