@@ -38,5 +38,4 @@ Route::post('/login', [loginController::class, 'Login']);
 Route::post('/register', [RegisterController::class, 'Register']);
 
 Route::get('/api/users', [UserController::class, 'getUsers']);
-
 Route::post('/articles', [ArticleController::class, 'store']);

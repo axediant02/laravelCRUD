@@ -8,7 +8,7 @@ class UpdateArticleRequest extends FormRequest
 {
     public function authorize()
     {
-        return true; // Adjust authorization logic as needed
+        return true;
     }
 
     public function rules()
@@ -16,7 +16,6 @@ class UpdateArticleRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            // Add other validation rules as needed
         ];
     }
 }

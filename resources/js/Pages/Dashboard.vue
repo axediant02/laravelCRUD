@@ -1,5 +1,7 @@
 <template>
-    <v-container grid-list-md="grid-list-md" offset-sm3="offset-sm3">
+<h1>Hello world</h1>
+
+    <!-- <v-container grid-list-md="grid-list-md" offset-sm3="offset-sm3">
         <v-layout row="row" wrap="wrap">
             <v-flex
                 style="cursor: pointer;"
@@ -27,66 +29,29 @@
                             </v-flex>
                         </v-layout>
                     </v-container>
-                    <v-card-actions>
-                        <v-btn>
-                            <router-link
-                                style="text-decoration:none;margin:2px"
-                                :to="{ name: 'details', params: { postId: post.id }}">
-                                Details
-                            </router-link>
-                        </v-btn>
-                        <v-btn class="btn btn-primary">
-                            <router-link
-                                style="text-decoration:none;margin:2px"
-                                :to="{ name: 'edit', params: { postId: post.id }}">
-                                Edit
-                            </router-link>
-                        </v-btn>
-                        <v-btn style="text-decoration:none;margin:2px" @click="deletedata(post.id)">Delete</v-btn>
-                    </v-card-actions>
                 </v-card>
             </v-flex>
         </v-layout>
-    </v-container>
+    </v-container> -->
 </template>
 
 <script>
-import axios from 'axios'; // Import axios
-
+import axios from 'axios';
 export default {
     name: 'Dashboard',
     data() {
         return {
             posts: [],
-        };
+        }; 
     },
     mounted() {
-        this.fetchPosts(); // Fetch posts when component is mounted
+        this.fetchPosts();
     },
     methods: {
         fetchPosts() {
-            axios.get('/api/articles')
-                .then(res => {
-                    this.posts = res.data;
-                })
-                .catch(error => {
+            axios.get('/api/articles').then(res => {this.posts = res.data;}).catch(error => {
                     console.error('Error fetching posts:', error);
                 });
-        },
-        deletedata(id) {
-            if (confirm("Are you sure to delete this data?")) {
-                axios.delete(`/api/articles/${id}`) // Assuming DELETE is the correct method for your endpoint
-                    .then(response => {
-                        this.fetchPosts(); // Refresh the list after deletion
-                        console.log('Deleted successfully:', response);
-                    })
-                    .catch(error => {
-                        console.error('Error deleting post:', error);
-                    });
-            }
-        },
-        navigateToPost(postId, userId) {
-            this.$router.push({ name: 'post', params: { postId, userId } });
         }
     }
 };

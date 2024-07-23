@@ -29,37 +29,24 @@ class ArticleController extends Controller
     
             $input = $request->all();
     
-            // Log the request data for debugging
-            \Log::info('Request Data:', $input);
-    
+
             // Create a new article with the input data
-            $article = Article::create($input); // Use $article to store the created article
-    
-            // Log the success status
-            \Log::info('Article creation success:', ['article' => $article]);
-    
-            // Return a JSON response based on the success of the operation
+            $article = Article::create($input);
+
             return response()->json([
                 "message" => "Data Uploaded Successfully",
                 "data" => $article
-            ], 201); // 201 Created status code
+            ]);
              } catch (\Exception $e) {
-            // Log the exception
-            \Log::error('Error creating article:', ['exception' => $e]);
-    
+
             // Return a JSON response indicating failure
             return response()->json([
                 "message" => "Data Upload Failure",
                 "error" => $e->getMessage()
-            ], 500);
+            ]);
         }
     }
     
-    
-
-    /**
-     * Display the specified article.
-     */
     public function show($id)
     {
         // Fetch article by ID

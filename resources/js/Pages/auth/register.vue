@@ -9,10 +9,8 @@
             <v-text-field v-model="email" label="Email" required></v-text-field>
             <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
             <v-text-field v-model="password_confirmation" label="Confirm Password" type="password" required></v-text-field>
-  
             <v-btn color="primary" type="submit">Sign Up</v-btn>
-  
-            <p>Already have an account? <router-link to="/login">Login</router-link></p>
+            <p>Already have an account? <router-link to="/login" class="text-blue">Login</router-link></p>
   
             <!-- Display errors -->
             <div v-if="errors.length" class="mt-3">
@@ -31,7 +29,6 @@
   
   export default {
     name: 'Register',
-  
     data() {
       return {
         name: '',
@@ -41,10 +38,9 @@
         errors: [],
       };
     },
-  
     methods: {
       signUp() {
-        this.errors = [];  // Clear previous errors
+        this.errors = [];
         axios.post('http://127.0.0.1:8000/register', {
           name: this.name,
           email: this.email,
@@ -69,8 +65,7 @@
   
   <style scoped>
   .primary {
-    background-color: #1976d2; /* Vuetify primary color */
-    color: white;
+    background-color: #1976d2;
   }
   </style>
   

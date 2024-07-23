@@ -6,12 +6,8 @@
           <v-form @submit.prevent="login">
             <v-text-field v-model="email" label="Email" required></v-text-field>
             <v-text-field v-model="password" label="Password" type="password" required></v-text-field>
-  
             <v-btn color="primary" type="submit">Login</v-btn>
-  
-            <p> Don't Have an Account? <router-link to="/register">Create an Account</router-link> </p>
-  
-  
+            <p> Don't Have an Account? <router-link to="/register" class="text-blue">Create an Account</router-link> </p>
           </v-form>
         </v-card-text>
       </v-card>
@@ -33,7 +29,7 @@
   
     methods: {
       login() {
-        axios.post('http://127.0.0.1:8000/login', {
+        axios.post('/login', {
           email: this.email,
           password: this.password
         }).then(response => {
